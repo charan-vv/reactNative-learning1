@@ -19,3 +19,17 @@ buildscript {
 }
 
 apply plugin: "com.facebook.react.rootproject"
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    
+    configurations.all {
+        resolutionStrategy {
+            force 'androidx.core:core:1.13.1' // Latest stable version
+            force 'androidx.appcompat:appcompat:1.6.1' // Ensures no older support libraries
+        }
+    }
+}
