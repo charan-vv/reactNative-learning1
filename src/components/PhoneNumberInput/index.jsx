@@ -4,7 +4,7 @@ import PhoneInput from "react-native-phone-number-input";
 
 const PhoneInputComponent = ({ onPhoneChange }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [countryCode, setCountryCode] = useState(""); // Default country code
+  const [countryCode, setCountryCode] = useState(""); 
   const phoneInputRef = useRef(null);
 
   return (
@@ -12,7 +12,7 @@ const PhoneInputComponent = ({ onPhoneChange }) => {
       <PhoneInput
         ref={phoneInputRef}
         defaultValue={phoneNumber}
-        defaultCode="IN" // Change as needed
+        defaultCode="IN" 
         layout="first"
         onChangeCountry={(country) => {
           const newCountryCode = `+${country.callingCode[0]}`;
@@ -24,14 +24,13 @@ const PhoneInputComponent = ({ onPhoneChange }) => {
           onPhoneChange(countryCode, text);
         }}
         withShadow
-        containerStyle={styles.input} // Apply custom styles
+        containerStyle={styles.input} 
         textContainerStyle={styles.input}
       />
     </View>
   );
 };
 
-// ✅ StyleSheet properly defined
 const styles = StyleSheet.create({
   inputContainer: {
     width: '50%',
