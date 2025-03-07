@@ -1,20 +1,21 @@
-import React, {useEffect} from 'react';
-
+import React, {useEffect, useState} from 'react';
 import {Login, ForgotPassword, SignUp, TextToSpeech} from '../Screens';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import SplashScreen from 'react-native-splash-screen';
-import {Platform} from 'react-native';
+import {Platform, View, ActivityIndicator} from 'react-native';
 
 const Stack = createStackNavigator();
 const options = {headerShown: false};
 
 const Layout = () => {
+
   useEffect(() => {
     if (Platform.OS === 'android') {
       SplashScreen.hide();
     }
   }, []);
+
   
 
   return (
