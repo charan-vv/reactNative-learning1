@@ -1,11 +1,16 @@
-
+import React, { useEffect } from 'react';
+import { LogBox } from 'react-native';
 import Layouts from './src/layouts';
 
-const app = () => {
-  return (
-    <>
-      <Layouts />
-    </>
-  );
+
+
+const App = () => {
+
+  useEffect(()=>{
+    LogBox.ignoreAllLogs(); 
+  },[])
+  
+  return <Layouts />;
 };
-export default app;
+
+export default App;
